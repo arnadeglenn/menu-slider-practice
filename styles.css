@@ -1,3 +1,14 @@
+:root {
+    --body-font: 'Mohave', sans-serif;
+    --dark-green: #022c22;
+    --mid-dark-green: #134e4a;
+    --mid-green: #10b981;
+    --mid-light-green: #34d399;
+    --light-green: #6ee7b7;
+    --white-green: #dcfce7;
+    --white-emerald: #d1fae5;
+ }
+
 * {
     box-sizing: border-box;
     margin: 0px;
@@ -5,11 +16,16 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+body {
+    background-color: var(--white-green);
+}
+
 .nav {
-    background-color: aquamarine;
+    background-color: var(--dark-green);
     display: flex;
     flex: 1;
     padding: 30px;
+    color: white;
 }
 
 .nav-list {
@@ -26,10 +42,77 @@ li {
 .dropdown {
     display: none;
     position: absolute;
-    background-color: aquamarine;
+    background-color: var(--dark-green);;
     padding: 10px;
     flex-direction: column;
     justify-content: space-around;
     gap: 5px;
     align-items: center;
+}
+
+.hamburger {
+    display: none;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--mid-dark-green);
+    color: white;
+    height: 40vh;
+}
+
+@media screen and (max-width: 320px) {
+    .nav {
+        display: none;
+        flex-direction: column;
+        height: 100vh;
+        max-height: 100%;
+    }
+
+    .nav-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dropdown {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+    }
+
+    .dropdown li {
+        font-size: 1.2rem;        
+    }
+
+    li {
+        text-align: center;
+    }
+
+    .hamburger {
+        background-color: var(--dark-green);;
+        height: 3rem;
+        width: 3rem;
+        position: fixed;
+        border-radius: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    svg {
+        height: auto;
+        width: 1.5rem;
+        fill: white;
+    }
+
+    .hero {
+        height: 25vh;
+    }
 }
